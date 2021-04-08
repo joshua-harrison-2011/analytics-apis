@@ -1,6 +1,6 @@
 ---
 title: Job endpoint
-description: Create data repair jobs or view past jobs.
+description: Create a data repair job or view past jobs.
 ---
 
 # Job endpoint
@@ -13,7 +13,7 @@ The `/job` endpoint uses the `validationToken` from the `/serverCallEstimate` en
 
 If the scope of the data repair job changes, re-run the `/serverCallEstimate` endpoint to generate a new `validationToken`.
 
-WARNING: Use of the Data Repair API permanently deletes existing Adobe Analtyics data. Follow the recommended workflow for testing and validation prior to applying any data repair jobs to production data.
+> WARNING: Use of the Data Repair API permanently deletes existing Adobe Analtyics data. Follow the recommended workflow for testing and validation prior to applying any data repair jobs to production data.
 
 `POST https://analytics.adobe.io/api/{ANALYTICS_GLOBAL_COMPANY_ID}/datarepair/v1/{REPORT_SUITE_ID}/job`
 
@@ -27,14 +27,7 @@ curl -X POST -H "accept: application/json" -H "x-proxy-global-company-id: {ANALY
     "https://analytics.adobe.io/api/{ANALYTICS_GLOBAL_COMPANY_ID}/datarepair/v1/{REPORT_SUITE_ID}/job?validationToken={VALIDATION_TOKEN}&dateRangeStart={YYYY-MM-DD}&dateRangeEnd={YYYY-MM-DD}"
 ```
 
-### Response
-
-The Data Repair API returns:
-
-* The Server call volume estimate for the data repair job
-* The job id
-* The status of a submitted job id
-* A list of all data repair jobs for a report suite
+### Example Response
 
 ```json
 {
@@ -66,9 +59,9 @@ The Data Repair API returns:
 }
 ```
 
-## View existing jobs
+## View a job list
 
-You can also use this endpoint to retrieve all data repair jobs that were created for the given report suite.
+You can also use this endpoint to retrieve a list of data repair jobs that were created for the given report suite.
 
 `GET https://analytics.adobe.io/api/{ANALYTICS_GLOBAL_COMPANY_ID}/datarepair/v1/{REPORT_SUITE_ID}/job`
 
@@ -80,7 +73,7 @@ curl -X GET -H "accept: application/json" -H "x-proxy-global-company-id: {ANALYT
     "https://analytics.adobe.io/api/{ANALYTICS_GLOBAL_COMPANY_ID}/datarepair/v1/{REPORT_SUITE_ID}/job"
 ```
 
-### Response
+### Example Response
 
 ```json
 [
