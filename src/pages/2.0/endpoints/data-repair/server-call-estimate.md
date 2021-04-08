@@ -1,11 +1,11 @@
 ---
 title: Server call estimate endpoint
-description: Estimate the number of server calls a data repair job costs.
+description: Estimate the size of a data repair job.
 ---
 
 # Server call estimate endpoint
 
-The `/serverCallEstimate` endpoint calculates the number of server calls for the given report suite and date range provided.  It also returns a `validationToken`, which is is used required to successfully create a data repair job.
+The `/serverCallEstimate` endpoint calculates the number of server calls for the given report suite and date range provided.  It also returns a `validationToken`, which is passed to `/job` in the `validationToken` query string parameter.
 
 You can calculate the approximate cost of a repair job with the following formula:
 
